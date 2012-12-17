@@ -1,3 +1,9 @@
+-- =============================================
+-- Author:		Johan van der Walt
+-- Create date: 2012-12-16
+-- Description:	This script creates the table in which all holidays are stored
+-- =============================================
+
 IF EXISTS(SELECT TOP 1 1 FROM sysobjects WHERE name like 'PublicHoliday')
 BEGIN
 	DROP TABLE PublicHoliday
@@ -11,6 +17,12 @@ CREATE TABLE PublicHoliday (
 	DateValue DATETIME
 	)
 GO
+
+-- =============================================
+-- Author:		Johan van der Walt
+-- Create date: 2012-12-16
+-- Description:	This script inserts entries into the table for each holiday.
+-- =============================================
 
 -- 2012 New year's day
 INSERT INTO PublicHoliday 
@@ -111,7 +123,7 @@ INSERT INTO PublicHoliday
 )
 VALUES 
 (
-	' National Women''s Day ', ' National Women''s Day ', '2012-08-09'
+	'National Women''s Day ', ' National Women''s Day ', '2012-08-09'
 )
 
 --  Heritage Day 
@@ -123,6 +135,48 @@ VALUES
 (
 	'Heritage Day', 'Heritage Day ', '2012-09-24'
 )
+
+--Day of Reconciliation
+INSERT INTO PublicHoliday 
+(
+	Name,[Description],DateValue
+)
+VALUES 
+(
+	'Day of Reconciliation', 'Day of Reconciliation ', '2012-12-16'
+)
+
+--Public holiday
+INSERT INTO PublicHoliday 
+(
+	Name,[Description],DateValue
+)
+VALUES 
+(
+	'Public holiday', 'Public holiday', '2012-12-17'
+)
+
+--Christmas Day
+INSERT INTO PublicHoliday 
+(
+	Name,[Description],DateValue
+)
+VALUES 
+(
+	'Christmas Day', 'Christmas Day', '2012-12-25'
+)
+
+
+--Day of Goodwill
+INSERT INTO PublicHoliday 
+(
+	Name,[Description],DateValue
+)
+VALUES 
+(
+	'Day of Goodwill', 'Day of Goodwill', '2012-12-26'
+)
+
 
 GO
 
